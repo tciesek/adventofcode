@@ -15,27 +15,26 @@ fun main() {
 }
 
 fun solution(input: File): Int {
-    val lines = input.readLines().map { it.toInt() }.toSet()
+    val numbers = input.readLines().map { it.toInt() }.toSet()
 
-    lines.forEach { x ->
-        lines.forEach { y ->
-            if(x + y == 2020) {
-                return x * y
-            }
+    numbers.forEach { x ->
+        val y = 2020 - x
+        if (y in numbers) {
+            return x * y
         }
     }
     throw IllegalStateException("Solution not found!")
 }
 
 fun solution2(input: File): Int {
-    val lines = input.readLines().map { it.toInt() }
+    val numbers = input.readLines().map { it.toInt() }.toSet()
 
-    lines.forEach { x ->
-        lines.forEach { y ->
-            lines.forEach { z ->
-                if (x + y + z == 2020) {
-                    return x * y * z
-                }
+    numbers.forEach { x ->
+        val diff = 2020 - x
+        numbers.forEach { y ->
+            val z = diff - y
+            if (z in numbers) {
+                return x * y * z
             }
         }
     }
