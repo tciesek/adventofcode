@@ -24,8 +24,6 @@ In the above example, `2` passwords are valid. The middle password, `cdefg`, 
 
 How many passwords are valid according to their policies?
 
-Your puzzle answer was `469`.
-
 --- Part Two ---
 ----------------
 
@@ -42,5 +40,3 @@ Given the same example list from above:
 -   `2-9 c: ccccccccc` is invalid: both position `2` and position `9` contain `c`.
 
 How many passwords are valid according to the new interpretation of the policies?
-
-Your puzzle answer was `267`.
